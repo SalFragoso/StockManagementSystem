@@ -29,3 +29,19 @@ GET localhost:8080/api/items/200
 ### Get All Items
 
 GET http://localhost:8080/api/items
+
+### Update item 1
+PUT http://localhost:8080/api/items/1
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "quantity": 99,
+  "price": 12.34
+}
+
+### Delete item by ID
+DELETE http://localhost:8080/api/items/1
+
+### Verify deletion
+GET http://localhost:8080/api/items/1

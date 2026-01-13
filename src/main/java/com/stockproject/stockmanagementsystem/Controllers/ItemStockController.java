@@ -40,5 +40,24 @@ public class ItemStockController {
                 .orElseThrow(() -> new ItemNotFound(id)); //Incase id does not exist returns 404
     }
 
+    //Update by ID
+    @PutMapping("{id}")
+    public ItemStock updateItem(@PathVariable Long id, @RequestBody ItemStock updatedItem) {
 
+        ItemStock existing = repository.findById(id)
+                .orElseThrow(() -> new ItemNotFound(id));
+
+        existing.setName(updatedItem.getName());
+        existing.setQuantity(updatedItem.getQuantity());
+        existing.setPrice(updatedItem.getPrice());
+
+        return repository.save(existing);
+    }
+
+    // Delete by ID
+    @DeleteMapping("{id}")
+    public void deleteItem(@PathVariable Long id) {
+
+        repository.deleteById(id); //Returns nothing and therefore does not need .OrElseThrow
+    }
 }
