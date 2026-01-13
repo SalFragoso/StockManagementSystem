@@ -18,6 +18,14 @@ Content-Type: application/json
   "price": 800.00
 }
 
+### Get Item by ID
+
+GET localhost:8080/api/items/2
+
+### Get Item by ID expecting error
+
+GET localhost:8080/api/items/200
+
 ### Get All Items
 
 GET http://localhost:8080/api/items

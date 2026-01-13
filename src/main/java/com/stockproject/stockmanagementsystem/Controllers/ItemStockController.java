@@ -1,5 +1,6 @@
 package com.stockproject.stockmanagementsystem.Controllers;
 
+import com.stockproject.stockmanagementsystem.Exceptions.ItemNotFound;
 import com.stockproject.stockmanagementsystem.model.ItemStock;
 import com.stockproject.stockmanagementsystem.repository.ItemStockRepository;
 import org.springframework.http.HttpStatus;
@@ -24,11 +25,20 @@ public class ItemStockController {
         return repository.save(item);
     }
 
-    //Read
+    //Read All Items
     @GetMapping
     public Iterable<ItemStock> getAllItems() { //Enhanced for loop from "Iterable"
 
         return repository.findAll();
     }
+
+    //Read by ID
+    @GetMapping("{id}")
+    public ItemStock getItem(@PathVariable long id) {
+
+        return repository.findById(id)
+                .orElseThrow(() -> new ItemNotFound(id)); //Incase id does not exist returns 404
+    }
+
 
 }
