@@ -1,11 +1,11 @@
-Stock Management System (Spring Boot)
+# Stock Management System (Spring Boot)
 
-A simple backend REST API built with Spring Boot to manage stock items.
-This project is being developed incrementally to practice real-world backend development concepts.
+A backend REST API built with **Spring Boot** to manage stock items.
+This project is developed incrementally to practice real-world backend development concepts.
 
---------------------------------------------------
+---
 
-FEATURES (SO FAR)
+## 🚀 Features
 
 - Create stock items
 - Retrieve all stock items
@@ -16,9 +16,9 @@ FEATURES (SO FAR)
 - In-memory database (H2)
 - RESTful API design
 
---------------------------------------------------
+---
 
-TECH STACK
+## 🛠 Tech Stack
 
 - Java 17
 - Spring Boot
@@ -28,40 +28,40 @@ TECH STACK
 - H2 Database
 - Maven
 
---------------------------------------------------
+---
 
-PROJECT STRUCTURE
+## 📁 Project Structure
 
-src/main/java/com/stockproject/stockmanagementsystem
+- **controller** → REST controllers  
+- **model** → JPA entities  
+- **repository** → Spring Data repositories  
+- **dto** → Data Transfer Objects (requests / responses)  
+- **exception** → Custom exceptions  
+- **StockManagementSystemApplication.java** → Application entry point  
 
-controller        -> REST controllers
-model             -> JPA entities
-repository        -> Spring Data repositories
-dto               -> Data Transfer Objects (requests/responses)
-exception         -> Custom exceptions
-StockManagementSystemApplication.java
+---
 
---------------------------------------------------
+## 🔗 API Endpoints
 
-API ENDPOINTS
+- **POST** `/api/items` → Create item  
+- **GET** `/api/items` → Get all items  
+- **GET** `/api/items/{id}` → Get item by ID  
+- **PUT** `/api/items/{id}` → Update item  
+- **DELETE** `/api/items/{id}` → Delete item  
 
-POST   /api/items          -> Create item
-GET    /api/items          -> Get all items
-GET    /api/items/{id}     -> Get item by ID
-PUT    /api/items/{id}     -> Update item
-DELETE /api/items/{id}     -> Delete item
+---
 
---------------------------------------------------
-
-TESTING THE API
+## 🧪 Testing the API
 
 Requests can be tested using:
-- IntelliJ HTTP Client (.http files)
+
+- IntelliJ HTTP Client (`.http` files)
 - Postman
 - curl
 
-Example request:
+### Example request
 
+```http
 POST http://localhost:8080/api/items
 Content-Type: application/json
 
@@ -71,40 +71,4 @@ Content-Type: application/json
   "price": 49.99
 }
 
---------------------------------------------------
 
-DATABASE
-
-- Uses H2 (in-memory) for development
-- Data resets when the application restarts
-
---------------------------------------------------
-
-PROJECT GOALS
-
-This project is built step by step to learn:
-- REST API design
-- Persistence with JPA
-- Validation
-- Proper project structure
-- Git and GitHub workflow
-
-Future plans:
-- DTO separation (request/response)
-- Global exception handling
-- PostgreSQL integration
-- Security (Spring Security)
-- Basic frontend
-
---------------------------------------------------
-
-NOTES
-
-This is a learning-focused project and will evolve over time.
-Each commit represents a meaningful development step.
-
---------------------------------------------------
-
-AUTHOR
-
-Built by Salvador Mota Fragoso
