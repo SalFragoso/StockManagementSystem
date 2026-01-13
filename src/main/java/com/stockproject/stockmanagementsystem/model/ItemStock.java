@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 public class ItemStock {
@@ -12,9 +16,12 @@ public class ItemStock {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
-    int quantity;
-    Double price;
-    String name;
+    @Positive
+    private int quantity;
+    @Min(0)
+    private Double price;
+    @NotBlank
+    private String name;
 
 
     //Empty constructor for JPA

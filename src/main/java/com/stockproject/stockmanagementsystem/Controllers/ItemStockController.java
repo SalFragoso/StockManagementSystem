@@ -3,6 +3,7 @@ package com.stockproject.stockmanagementsystem.Controllers;
 import com.stockproject.stockmanagementsystem.Exceptions.ItemNotFound;
 import com.stockproject.stockmanagementsystem.model.ItemStock;
 import com.stockproject.stockmanagementsystem.repository.ItemStockRepository;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class ItemStockController {
     //Create
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ItemStock createItem(@RequestBody ItemStock item){
+    public ItemStock createItem(@Valid @RequestBody ItemStock item){
 
         return repository.save(item);
     }
@@ -42,7 +43,7 @@ public class ItemStockController {
 
     //Update by ID
     @PutMapping("{id}")
-    public ItemStock updateItem(@PathVariable Long id, @RequestBody ItemStock updatedItem) {
+    public ItemStock updateItem(@PathVariable Long id, @Valid @RequestBody ItemStock updatedItem) {
 
         ItemStock existing = repository.findById(id)
                 .orElseThrow(() -> new ItemNotFound(id));
