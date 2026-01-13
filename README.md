@@ -35,7 +35,6 @@ This project is developed incrementally to practice real-world backend developme
 - **controller** → REST controllers  
 - **model** → JPA entities  
 - **repository** → Spring Data repositories  
-- **dto** → Data Transfer Objects (requests / responses)  
 - **exception** → Custom exceptions  
 - **StockManagementSystemApplication.java** → Application entry point  
 
