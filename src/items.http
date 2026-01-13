@@ -1,0 +1,23 @@
+### Create an Item
+POST http://localhost:8080/api/items
+Content-Type: application/json
+
+{
+  "name": "keyboard",
+  "quantity": 3,
+  "price": 79.99
+}
+
+### Create an Item
+POST http://localhost:8080/api/items
+Content-Type: application/json
+
+{
+  "name": "Iphone",
+  "quantity": 1,
+  "price": 800.00
+}
+
+### Get All Items
+
+GET http://localhost:8080/api/items
